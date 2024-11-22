@@ -9,7 +9,7 @@ const NavbarContainer = styled.nav`
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #0097e6;
+  background-color: #2980b9;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -64,7 +64,7 @@ const MobileNavMenu = styled.div`
   left: 0;
   width: 250px;
   height: 100%;
-  background-color: ##0652DD;
+  background-color: #2980b9;
   color: #fff;
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   padding-top: 60px;

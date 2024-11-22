@@ -12,12 +12,15 @@ const PageContainer = styled.div`
 `;
 
 const Pagina = () => {
+  
+  
   return (
-    <PageContainer>
-        <Header />
-        <Body />
-        <Footer />
-    </PageContainer>
+    // Use o ProgressProvider para envolver os componentes
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
   );
 };
 

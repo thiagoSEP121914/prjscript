@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
   width: 100%;
+  height:10vh;
+
   padding: 5px;
-  background-color: #2980b9;  /* Cor de fundo azul */
+  background-color:#2980b9;  /* Cor de fundo azul */
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -25,8 +27,8 @@ const FooterTitle = styled.h2`
 
 const ContactInfo = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction:row;
+  gap: 20px;
 `;
 
 const ContactItem = styled.p`

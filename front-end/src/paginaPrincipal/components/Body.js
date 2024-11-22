@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-
-
-// Dados dos cursos
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom'; // Para navegação
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 100vh; /* Ocupa toda a altura da tela */
-  width: 100%; 
+  height: 100vh; 
+  width: 100%;
   padding: 20px;
   background-color: #ffffff;
   color: black;
@@ -19,13 +17,13 @@ const Container = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+  overflow-y: auto;
 `;
 
 const Title = styled.h1`
   margin-bottom: 10px;
-  margin-top:70px;
-  color:#2980b9;
+  margin-top: 70px;
+  color: #2980b9;
 `;
 
 const CourseList = styled.ul`
@@ -39,7 +37,7 @@ const CourseList = styled.ul`
 const CourseItem = styled.li`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 20px;
   background: #f9f9f9;
   border-radius: 10px;
@@ -61,7 +59,7 @@ const CourseTitle = styled.span`
 const ProgressBar = styled.div`
   width: 70%;
   height: 10px;
-  background: #444;
+  background: #ddd;
   border-radius: 5px;
   margin-top: 10px;
   position: relative;
@@ -74,7 +72,7 @@ const Progress = styled.div`
   width: ${(props) => props.width}%;
 `;
 
-const AccessButton = styled.a`
+const AccessButton = styled(Link)`
   text-decoration: none;
   color: #3498db;
   padding: 10px 20px;
@@ -87,21 +85,15 @@ const AccessButton = styled.a`
     color: white;
   }
 `;
-const PDFiframe = styled.iframe `
-  width:100%;
-  height:600px;
-  border:none;
-  margin-top: 1opx;
-`;
-const Body = () => {
 
+const Body = () => {
   const cursosData = [
-    { nome: "Big Data & Analytics", progresso: 0, link: '/Curso.pdf'},
-    { nome: "Blockchain Advanced", progresso: 0, link: "/Curso.pdf" },
-    { nome: "Business Intelligence (BI)", progresso: 0, link: "/Curso.pdf" },
-    { nome: "Cloud Fundamentals", progresso: 0, link: "/Curso.pdf" },
-    { nome: "Customer Experience Management", progresso: 0, link: "/Curso.pdf" },
-    { nome: "Cybersecurity", progresso: 0, link: "/Curso.pdf" },
+    { nome: "Big Data & Analytics", progresso: 10, link: "/Curso" },
+    { nome: "Blockchain Advanced", progresso: 20, link: "/Curso" },
+    { nome: "Business Intelligence (BI)", progresso: 30, link: "/Curso" },
+    { nome: "Cloud Fundamentals", progresso: 40, link: "/Curso" },
+    { nome: "Customer Experience Management", progresso: 50, link: "/Curso" },
+    { nome: "Cybersecurity", progresso: 60, link: "/Curso" },
   ];
 
   const [cursos] = useState(cursosData);
@@ -118,15 +110,15 @@ const Body = () => {
                 <Progress width={curso.progresso}></Progress>
               </ProgressBar>
             </CourseInfo>
-            <AccessButton 
-              href={curso.link}
-               target={curso.link === "#" ? "_self" : "_blank"} 
-               rel={curso.link === "#" ? undefined : "noopener noreferrer"}
-            >Acessar</AccessButton>
+            {/* Link para acessar o curso */}
+            <AccessButton to={curso.link} target='_blank' rel='noopener noreferrer'>
+              Acessar
+            </AccessButton>
           </CourseItem>
         ))}
       </CourseList>
     </Container>
   );
 };
+
 export default Body;
