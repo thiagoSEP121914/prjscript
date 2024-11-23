@@ -56,22 +56,6 @@ const CourseTitle = styled.span`
   color: #3498db;
 `;
 
-const ProgressBar = styled.div`
-  width: 70%;
-  height: 10px;
-  background: #ddd;
-  border-radius: 5px;
-  margin-top: 10px;
-  position: relative;
-`;
-
-const Progress = styled.div`
-  height: 100%;
-  background: #3498db;
-  border-radius: 5px;
-  width: ${(props) => props.width}%;
-`;
-
 const AccessButton = styled(Link)`
   text-decoration: none;
   color: #3498db;
@@ -89,11 +73,11 @@ const AccessButton = styled(Link)`
 const Body = () => {
   const cursosData = [
     { nome: "Big Data & Analytics", progresso: 10, link: "/Curso" },
-    { nome: "Blockchain Advanced", progresso: 20, link: "/Curso" },
-    { nome: "Business Intelligence (BI)", progresso: 30, link: "/Curso" },
-    { nome: "Cloud Fundamentals", progresso: 40, link: "/Curso" },
-    { nome: "Customer Experience Management", progresso: 50, link: "/Curso" },
-    { nome: "Cybersecurity", progresso: 60, link: "/Curso" },
+    { nome: "Blockchain Advanced", progresso: 20, link: "/Curso2" },
+    { nome: "Business Intelligence (BI)", progresso: 30, link: "/Curso3" },
+    { nome: "Cloud Fundamentals", progresso: 40, link: "/Curso4" },
+    { nome: "Customer Experience Management", progresso: 50, link: "/Curso5" },
+    { nome: "Cybersecurity", progresso: 60, link: "/Curso6" },
   ];
 
   const [cursos] = useState(cursosData);
@@ -106,9 +90,6 @@ const Body = () => {
           <CourseItem key={index}>
             <CourseInfo>
               <CourseTitle>{curso.nome}</CourseTitle>
-              <ProgressBar>
-                <Progress width={curso.progresso}></Progress>
-              </ProgressBar>
             </CourseInfo>
             {/* Link para acessar o curso */}
             <AccessButton to={curso.link} target='_blank' rel='noopener noreferrer'>
